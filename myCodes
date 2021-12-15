@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the amount of products sold per day :");
+        int daiylSolve = scan.nextInt();
+        int price = 15;
+        int daiylRate;
+
+        if (daiylSolve < 50) {
+            price = price + 1;
+            daiylRate = price * daiylSolve;
+            System.out.println("The fee received per day :" + daiylRate);
+        } else {
+            price = price + 2;
+            daiylRate = (price * 50) + ((daiylSolve - 50) * (price + 1));
+            System.out.println("The fee received per day :" + daiylRate);
+        }
+    }
+}
